@@ -1,10 +1,12 @@
 version: "3.8"
 
 services:
-  database_entersendmailNode:
+  postgres:
     image: postgres
     container_name: entersendmailNode
     restart: always
+    ports: 
+      - 5432:5432
     environment:
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=docker
@@ -12,21 +14,24 @@ services:
     volumes:
       - pgdata:/data/postgres
     networks:
-      - app-connect
+      - default
   app:
     build: .
+    container_name: entersendmailApp
+    ports:
+      - 3000:3000
     volumes:
       - .:/usr/app
-    ports:
-      - "3000:3000"
     depends_on:
-      - database_entersendmailNode
+      - postgres
     networks:
-      - app-connect
+      - default
 
 volumes:
   pgdata:
     driver: local
 
 networks:
-  app-connect:
+  default:
+    driver: bridge
+
