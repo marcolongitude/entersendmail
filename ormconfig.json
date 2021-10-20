@@ -1,7 +1,7 @@
 {
   "type":  "postgres",
   "port": 5432,
-  "host": "172.18.0.2",
+  "host": "postgres",
   "username": "docker",
   "password": "docker",
   "database": "entersendmailNode",
@@ -9,5 +9,8 @@
   "cli": {
     "migrationsDir": "./src/database/migrations"
   },
-  "entities": ["./src/modules/cars/entities/Category.ts"]
+  "entities": [
+    "./src/modules/cars/entities/Category.ts",
+    "./src/modules/cars/entities/Specification.ts"
+    ]
 }
