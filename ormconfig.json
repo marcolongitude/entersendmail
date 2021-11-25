@@ -1,7 +1,7 @@
 {
   "type":  "postgres",
   "port": 5432,
-  "host": "postgres",
+  "host": "192.168.240.1",
   "username": "docker",
   "password": "docker",
   "database": "entersendmailNode",
