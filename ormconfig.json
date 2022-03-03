@@ -1,7 +1,7 @@
 {
   "type":  "postgres",
   "port": 5432,
-  "host": "192.168.240.1",
+  "host": "localhost",
   "username": "docker",
   "password": "docker",
   "database": "entersendmailNode",
@@ -11,6 +11,7 @@
   },
   "entities": [
     "./src/modules/cars/entities/Category.ts",
-    "./src/modules/cars/entities/Specification.ts"
-    ]
+    "./src/modules/cars/entities/Specification.ts",
+    "./src/modules/accounts/entities/User.ts"
+  ]
 }
