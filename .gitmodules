@@ -1,0 +1,4 @@
+[submodule "testsubmodules"]
+	path = testsubmodules
+	url = git@gitlab.com:marcocpdti/testsubmodules.git
+	branch = master
